@@ -4,6 +4,8 @@
 
 > **中文** · [English](#English)
 
+### 重要提示：由于本模组的实现高度依赖webview2组件，所以它在除了windows系统以外的任何系统上的兼容性都无法保证，并且windows10部分版本及更老的版本由于没有内置webview2组件很可能会导致重大问题。
+
 万象通揽 wikievery 是一个基于 WebView 的便携式 Wiki 查阅模组，让你无需再切出游戏、打开浏览器去查资料。只需按下快捷键，即可随时呼出 Wiki 页面，支持搜索、查询、复制和粘贴等操作。默认快捷键为 K，你可以在设置中自由更改。
 
 我做这个模组，是因为在高版本的 Fabric 环境下，似乎找不到这样轻便的 Wiki 查看工具。我不想仅仅为了查 Wiki 就去装一个动辄几百 MB 的内置浏览器模组。而得益于 WebView 出色的轻量化特性，本模组体积仅有惊人的 310 KB，却几乎能实现 Edge 浏览器的全部功能——包括播放音视频媒体，它本质上就是一个内嵌的 Edge。而wikievery这个名字意思就是随时随地都可以wiki。
@@ -82,6 +84,9 @@ debug=false
 
 ---
 ## English
+
+### Important note:
+## As the implementation of this mod heavily relies on the webview2 component, its compatibility with any system other than Windows cannot be guaranteed. Additionally, some versions of Windows 10 and older without built-in webview2 components may cause significant issues.
 
 # Wikievery
 

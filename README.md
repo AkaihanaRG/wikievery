@@ -1,3 +1,4 @@
+![image](https://github.com/AkaihanaRG/wikievery/blob/master/D510CC162A40185BB40AEC27DA5096FB.png)
 
 ## 万象通揽 wikievery
 

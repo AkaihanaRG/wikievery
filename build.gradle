@@ -1,0 +1,71 @@
+plugins {
+	id 'fabric-loom' version "${loom_version}"
+}
+
+repositories {
+	// Loom already adds the essential maven repositories (Minecraft, Fabric, Mojang, etc.).
+	// Maven Central is added explicitly for JNA.
+	mavenCentral()
+}
+
+loom {
+	runs {
+		client {
+			// Auto-join the local dev server (runServer) on startup,
+			// so the player enters as a regular (non-host) client.
+			programArgs "--quickPlayMultiplayer", "localhost:25565"
+		}
+		server {
+			runDir "runServer"
+		}
+	}
+}
+
+dependencies {
+	// To change the versions see the gradle.properties file
+	minecraft "com.mojang:minecraft:${project.minecraft_version}"
+
+	// MC 26.2 ships an unobfuscated (already named) jar and has no Yarn builds,
+	// so no mappings dependency is required. Loom 1.18+ detects this automatically.
+
+	implementation "net.fabricmc:fabric-loader:${project.loader_version}"
+
+	// Fabric API. This is technically optional, but you probably want it anyway.
+	implementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
+
+	// JNA, used to load the webview natives (webview.dll / WebView2Loader.dll).
+	implementation "net.java.dev.jna:jna:5.19.1"
+}
+
+processResources {
+	def version = project.version
+	inputs.property "version", version
+	inputs.property "loader_version", project.loader_version
+	inputs.property "minecraft_version", project.minecraft_version
+
+	filesMatching("fabric.mod.json") {
+		expand "version": version, "loader_version": project.loader_version, "minecraft_version": project.minecraft_version
+	}
+}
+
+tasks.withType(JavaCompile).configureEach {
+	it.options.release = 25
+}
+
+java {
+	// Loom will automatically attach sourcesJar to a RemapSourcesJar task and to the "build" task
+	// if it is present.
+	withSourcesJar()
+
+	sourceCompatibility = JavaVersion.VERSION_25
+	targetCompatibility = JavaVersion.VERSION_25
+}
+
+jar {
+	def projectName = project.name
+	inputs.property "projectName", projectName
+
+	from("LICENSE") {
+		rename { "${it}_$projectName" }
+	}
+}

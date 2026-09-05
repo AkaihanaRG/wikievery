@@ -1,0 +1,25 @@
+# Gradle
+.gradle/
+build/
+out/
+
+# Loom run directory (dev game files / logs)
+run/
+runServer/
+
+# IDE
+.idea/
+*.iml
+.vscode/
+.classpath
+.project
+.settings/
+bin/
+
+# OS
+Thumbs.db
+Desktop.ini
+
+# Local release archives
+release/
+

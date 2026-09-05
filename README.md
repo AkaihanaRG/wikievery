@@ -23,9 +23,6 @@ WebView2）。
   网页悬浮在"世界之上"。
 - **关闭区域**：点击边框左上角 72×72 的区域即可关闭。
 - 音效：开/关时播放 2 倍音量的翻页音效；通过关闭按钮关闭时会额外播放原版按钮点击音效。
-- 网页打开期间游戏完全"静止"：释放鼠标捕获、浏览器以外的左右键点击被吞掉、滚轮不会
-  切换快捷栏，并妥善处理焦点/暂停问题（不会误弹暂停菜单、不会卡 ESC 界面）。只有当你
-  在网页输入框里打字时，键盘焦点才会交给页面。
 - 页面可滚动、可点链接、可输入（打字时除保留键 K/ESC 外均正常，K/ESC 用于关闭）。
 - 全部配置项见 `config/wikievery.properties`。
 
@@ -112,11 +109,6 @@ JNA binding for the C [webview](https://github.com/webview/webview) library
 - **Close hit-area**: click the 72×72 top-left corner of the frame to close.
 - Sound feedback: a double-volume page-turn on open/close, and the vanilla button
   click when closing via the button.
-- While the page is open the game is fully inert: mouse capture is released,
-  left/right clicks outside the browser are swallowed, the mouse wheel does not
-  scroll the hotbar, and focus/pause issues are handled (no accidental pause menu,
-  no stuck ESC screens). Keyboard focus is only handed to the page while you are
-  typing in a text field.
 - The page scrolls, links work, and text fields are usable (typing works except the
   reserved `K`/`ESC` keys, which close the overlay).
 - Fully configurable via `config/wikievery.properties`.

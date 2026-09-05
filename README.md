@@ -85,7 +85,7 @@ debug=false
 ---
 ## English
 
-### Important note:
+## Important note:
 ## As the implementation of this mod heavily relies on the webview2 component, its compatibility with any system other than Windows cannot be guaranteed. Additionally, some versions of Windows 10 and older without built-in webview2 components may cause significant issues.
 
 # Wikievery
